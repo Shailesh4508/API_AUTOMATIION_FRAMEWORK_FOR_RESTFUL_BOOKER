@@ -35,7 +35,7 @@ mvn test -Dsurefire.suiteXmlFiles=testng.xml
 ### 🔀 Parallel Execution
 Modify `testng.xml` to run tests in parallel:
 ```xml
-<suite name="All Test Suite" parallel="methods" thread-count="2">
+<suite name="All Test Suite" parallel="methods" thread-count="2"></suite>
 ```
 
 ### 🔗 Integration Tests
