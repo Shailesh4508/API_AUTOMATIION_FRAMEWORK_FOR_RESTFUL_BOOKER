@@ -5,7 +5,7 @@
 ## 🚀 Introduction
 This API Automation framework is designed for testing the CRUD operations of Restful Booker using **RestAssured in Java**. It provides a robust and scalable testing solution with detailed reporting and CI/CD integration.
 
-📌 **Author:** *SHailesh Singh*
+📌 **Author:** *SHAILESH SINGH*
 
 ## 🛠 Tech Stack
 - **Java (JDK > 22)**
