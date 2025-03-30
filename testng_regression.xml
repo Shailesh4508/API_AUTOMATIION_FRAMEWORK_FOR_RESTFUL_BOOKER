@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/Users/shail/IdeaProjects/API_AUTOMATIION_FRAMEWORK_FOR_RESTFUL_BOOKER">
+        <groups>
+            <run>
+                <include name="Regression"></include>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="com.restfulbooker.tests.crud.Test_Create_Booking">
+            </class>
+        </classes>
+    </test>
+</suite>
