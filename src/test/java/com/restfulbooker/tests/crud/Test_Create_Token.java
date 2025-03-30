@@ -21,12 +21,11 @@ public class Test_Create_Token extends Base_test {
 
         requestSpecification.basePath(API_Constants.Auth_url);
         response = RestAssured.given(requestSpecification)
-                .when().body(Payload_Manager.setAuthPayload()).post();
+                .when().body(payloadManager.setAuthPayload()).post();
         validatableResponse = response.then().log().all();
         validatableResponse.statusCode(200);
         String token = payloadManager.getTokenFromJSON(response.asString());
         assertActions.verifyStringKeyNotNull(token);
-
 
     }
 

@@ -39,4 +39,23 @@ public class Base_test {
 //                .setBaseUri(API_Constants.Base_Url)
 //                .addHeader("Content-Type","application/json").build().log().all();
     }
+
+    public String getToken() {
+        requestSpecification = RestAssured
+                .given()
+                .baseUri(API_Constants.Base_Url)
+                .basePath(API_Constants.Auth_url);
+
+        // Setting the payload
+        String payload = payloadManager.setAuthPayload();
+
+        // Get the Token
+        response = requestSpecification.contentType(ContentType.JSON).body(payload).when().post();
+        // String Extraction
+        String token = payloadManager.getTokenFromJSON(response.asString());
+
+        return token;
+
+
+    }
 }

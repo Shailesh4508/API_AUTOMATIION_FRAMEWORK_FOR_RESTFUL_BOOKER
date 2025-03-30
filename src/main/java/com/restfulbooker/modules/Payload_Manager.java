@@ -35,7 +35,7 @@ public class Payload_Manager {
         return bookingResponse;
     }
 
-    public static String setAuthPayload(){
+    public String setAuthPayload(){
         Auth auth = new Auth();
         auth.setUsername("admin");
         auth.setPassword("password123");
@@ -50,4 +50,28 @@ public class Payload_Manager {
         TokenResponse tokenResponse1 = gson.fromJson(tokenResponse,TokenResponse.class);
         return tokenResponse1.getToken().toString();
     }
+
+    public Booking getResponseFromJSON(String getResponse){
+        gson = new Gson();
+        Booking booking = gson.fromJson(getResponse, Booking.class);
+        return booking;
+    }
+
+    public String fullUpdatePayloadAsString() {
+        Booking booking = new Booking();
+        booking.setFirstname("Lucky");
+        booking.setLastname("Dutta");
+        booking.setTotalprice(112);
+        booking.setDepositpaid(true);
+
+        Bookingdates bookingdates = new Bookingdates();
+        bookingdates.setCheckin("2024-02-01");
+        bookingdates.setCheckout("2024-02-05");
+        booking.setBookingdates(bookingdates);
+        booking.setAdditionalneeds("Breakfast");
+        return gson.toJson(booking);
+
+
+    }
+
 }
